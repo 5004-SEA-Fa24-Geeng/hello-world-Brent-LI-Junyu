@@ -21,3 +21,37 @@ Mermaid is a markdown language that allows you to create diagrams. You can find 
 
 <!-- start your playground code under this dashed line -->
 ----
+```mermaid
+classDiagram
+direction BT
+class AlohaWorld {
+- AlohaWorld()
++ main(String[]) void
+  }
+  class ConsoleView {
+- ConsoleView()
++ printGreeting(String) void
++ checkRunAgain() boolean
+  String name
+  int locality
+  }
+  class Greeter {
++ Greeter(String)
++ Greeter(String, int)
+- int locality
+- String name
+- List~String~ localityList
++ equals(Object) boolean
++ greet() String
++ hashCode() int
++ toString() String
++ greet(boolean) String
+  String name
+  int locality
+  List~String~ localityList
+  String localityString
+  }
+  AlohaWorld --> ConsoleView : uses
+  AlohaWorld --* Greeter : has-a
+  ConsoleView -->Greeter : uses
+```
