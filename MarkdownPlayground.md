@@ -2,7 +2,15 @@
 
 Use this file to add example markdown elements you learned about by reading the markdown resources below. You need to add at least 3 different markdown elements you learned about, and a mermaid class diagram (of your choice does not have to follow the assignment. However, if you did use mermaid for the assignment, you can just copy that here). 
 
+1. -->: Represents a uses relationship (weak association).
+2. --*: Represents a has-a relationship (aggregation).
+3. +: The meaning of public
+
+
 Mermaid is a markdown language that allows you to create diagrams. You can find more information about mermaid in the resources below. It has become popular enough that github has included it as an option in their markdown.  For built in markdown readers, such as the one built into IntelliJ or VSCode, you may need to install a plugin to render the mermaid diagrams. 
+
+
+
 
 > [!NOTE]
 > [IntelliJ Mermaid Plugin](https://plugins.jetbrains.com/plugin/20146-mermaid). Also for intelliJ, this is often installed by default, but incase it isn't [Markdown Plugin IntelliJ](https://plugins.jetbrains.com/plugin/7793-markdown). 
@@ -55,3 +63,36 @@ class AlohaWorld {
   AlohaWorld --* Greeter : has-a
   ConsoleView -->Greeter : uses
 ```
+classDiagram
+direction BT
+class AlohaWorld {
+- AlohaWorld()
++ main(String[]) void
+  }
+  class ConsoleView {
+- ConsoleView()
++ printGreeting(String) void
++ checkRunAgain() boolean
+  String name
+  int locality
+  }
+  class Greeter {
++ Greeter(String)
++ Greeter(String, int)
+- int locality
+- String name
+- List~String~ localityList
++ equals(Object) boolean
++ greet() String
++ hashCode() int
++ toString() String
++ greet(boolean) String
+  String name
+  int locality
+  List~String~ localityList
+  String localityString
+  }
+  AlohaWorld --> ConsoleView : uses
+  AlohaWorld --* Greeter : has-a
+  ConsoleView -->Greeter : uses
+
