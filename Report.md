@@ -7,10 +7,47 @@ The following report contains questions you need to answer as part of your submi
 Please link your UML design file here. See resources in the assignment on how to
 link an image in markdown. You may also use [mermaid] class diagrams if you prefer, if so, include the mermaid code here.  You DO NOT have to include Greeting.java as part of the diagram, just the AlohaWorld application that includes: [AlohaWorld.java], [Greeter.java], and [ConsoleView.java].
 
+------
+```mermaid
+classDiagram
+direction BT
+class AlohaWorld {
+- AlohaWorld()
++ main(String[]) void
+  }
+  class ConsoleView {
+- ConsoleView()
++ printGreeting(String) void
++ checkRunAgain() boolean
+  String name
+  int locality
+  }
+  class Greeter {
++ Greeter(String)
++ Greeter(String, int)
+- int locality
+- String name
+- List~String~ localityList
++ equals(Object) boolean
++ greet() String
++ hashCode() int
++ toString() String
++ greet(boolean) String
+  String name
+  int localityS
+  List~String~ localityList
+  String localityString
+  }
+  AlohaWorld --> ConsoleView : uses
+  AlohaWorld --* Greeter : has-a
+  ConsoleView -->Greeter : uses
+```
 
 
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
+
+------The program begins execution in the main() method of the AlohaWorld class. Within this method, the program first prompts the client to enter their name and location using the static methods of the ConsoleView class, which handles user input and output. Once the client's input is collected, an instance of the Greeter class is created using the provided name and location. The Greeter object is responsible for generating a personalized greeting message based on the input. The program then retrieves this greeting by calling the greet() method of the Greeter class. Finally, the generated greeting is displayed back to the client using the static displayMessage() method from the ConsoleView class. The flow ensures a clear and interactive user experience, guiding the client through a series of inputs and providing an output based on their responses.
 
 
 ## Assignment Questions
