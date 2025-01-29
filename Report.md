@@ -114,6 +114,12 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 [^2]: Math (Java Platform SE 17). https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Math.html. Accessed: 2024-03-30.
 
+[^3]: This keyword in Java: 2024. https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html. Accessed: 2025-01-27.
+
+[^4]: String.format keyword in Java: 2024. https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-. Accessed: 2025-01-27.
+
+[^5]: Scanner keyword in Java: 2024. https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html. Accessed: 2025-01-27.
+
 
 <!-- This is a comment, below this link the links in the document are placed here to make ti easier to read. This is an optional style for markdown, and often as a student you will include the links inline. for example [mermaid](https://mermaid.js.org/intro/syntax-reference.html) -->
 [mermaid]: https://mermaid.js.org/intro/syntax-reference.html

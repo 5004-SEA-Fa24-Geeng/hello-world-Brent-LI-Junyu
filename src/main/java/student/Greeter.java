@@ -39,12 +39,11 @@ public class Greeter {
 
     /**
      * This is the constructor for the Greeter class.
-     *
      * This constructor assumes 2 as the default locality.
      * 
      * @param name of the person to greet
      */
-    public Greeter(String name) {
+    public Greeter(String name){
         this(name, DEFAULT_LOCALITY); // notice we call the more detailed constructor!
     }
 

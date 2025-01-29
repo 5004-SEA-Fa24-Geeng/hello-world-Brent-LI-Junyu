@@ -1,17 +1,28 @@
 package student;
 
 /**
- * This class is a place holder which you will fully implement based on the javadoc
- * 
+ * This class is a place holder which you will fully implement based on the javadoc.
  * https://cs5004-khoury-lionelle.github.io/hello_world/student/package-summary.html
  * 
  */
-public class Greeting {
+public class Greeting{
+
+    /** The locality ID number. */
     private int localityID;
+
+    /** The name of the locality. */
     private String localityName;
+
+    /** The greeting content. */
     private String greeting;
+
+    /** The greeting in ASCII format. */
     private String asciiGreeting;
+
+    /** The greeting in Unicode format. */
     private String unicodeGreeting;
+
+    /** The format string for the greeting, which includes a placeholder for the name. */
     private String formatStr;
 
     /**
