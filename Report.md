@@ -64,11 +64,8 @@ Write a short paragraph detailing the flow of the program in your own words. Thi
 
     * (example) The `final` keyword when used on a class prevents the class from being subclassed. This means that the class cannot be extended by another class. This is useful when you want to prevent a class from being modified or extended[^1] . It is often the standard to do this when a class only contains static methods such as driver or utility classes. Math in Java is an example of a final class[^2] .
     * The this() keyword is used to call another constructor within the same class. It helps reduce redundancy when initializing objects with multiple constructor variations[^3].
-      https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html
     * The String.format() method allows formatted string creation, similar to printf. It replaces placeholders (%s, %d, etc.) with actual values[^4].
-    * https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-
     * The Scanner class is used to take user input. new Scanner(System.in) creates a scanner object that reads input from the console[^5].
-    * https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
 
 3. What does `main` do in Java? 
    
