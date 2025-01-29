@@ -9,59 +9,50 @@ package student;
 public class Greeting {
     private int localityID;
     private String localityName;
+    private String greeting;
     private String asciiGreeting;
     private String unicodeGreeting;
     private String formatStr;
 
     /**
-     * Constructor with only locality ID and name. Defaults greetings to "Hello".
-     *
-     * @param localityID    the ID of the locality
-     * @param localityName  the name of the locality
+     * Full constructor with all parameters.
+     * @param localityID the locality id number
+     * @param localityName the name of the locality
+     * @param asciiGreeting the ASCII version of the greeting
+     * @param unicodeGreeting the Unicode version of the greeting
+     * @param formatStr the format string for the greeting
      */
-    public Greeting(int localityID, String localityName) {
-        this.localityID = localityID;
-        this.localityName = localityName;
-        this.asciiGreeting = "Hello";
-        this.unicodeGreeting = "Hello";
-        this.formatStr = "%s, " + unicodeGreeting + "!";
-    }
-
-    /**
-     * Constructor with locality ID, name, and ASCII greeting. Unicode greeting defaults to ASCII greeting.
-     *
-     * @param localityID     the ID of the locality
-     * @param localityName   the name of the locality
-     * @param asciiGreeting  the ASCII greeting
-     */
-    public Greeting(int localityID, String localityName, String asciiGreeting) {
-        this.localityID = localityID;
-        this.localityName = localityName;
-        this.asciiGreeting = asciiGreeting;
-        this.unicodeGreeting = asciiGreeting;
-        this.formatStr = "%s, " + unicodeGreeting + "!";
-    }
-
-    /**
-     * Constructor with locality ID, name, ASCII greeting, Unicode greeting, and format string.
-     *
-     * @param localityID     the ID of the locality
-     * @param localityName   the name of the locality
-     * @param asciiGreeting  the ASCII greeting
-     * @param unicodeGreeting the Unicode greeting
-     * @param formatStr      the format string
-     */
-    public Greeting(int localityID, String localityName, String asciiGreeting, String unicodeGreeting, String formatStr) {
+    public Greeting(int localityID, String localityName, String asciiGreeting,
+                    String unicodeGreeting, String formatStr) {
         this.localityID = localityID;
         this.localityName = localityName;
         this.asciiGreeting = asciiGreeting;
         this.unicodeGreeting = unicodeGreeting;
-        this.formatStr = formatStr.replace("%%s", "%s").replace("%s", unicodeGreeting);
+        this.formatStr = formatStr;
     }
 
     /**
-     * Returns the locality ID.
-     * @return locality ID
+     * Constructor with locality ID, name, and a single greeting.
+     * @param localityID the locality id number
+     * @param localityName the name of the locality
+     * @param greeting the greeting to use for both ASCII and Unicode
+     */
+    public Greeting(int localityID, String localityName, String greeting) {
+        this(localityID, localityName, greeting, greeting, "%s, %%s!");
+    }
+
+    /**
+     * Constructor with just locality ID and name.
+     * @param localityID the locality id number
+     * @param localityName the name of the locality
+     */
+    public Greeting(int localityID, String localityName) {
+        this(localityID, localityName, "Hello");
+    }
+
+    /**
+     * Returns the locality id number.
+     * @return the locality id number
      */
     public int getLocalityID() {
         return localityID;
@@ -69,48 +60,50 @@ public class Greeting {
 
     /**
      * Returns the locality name.
-     * @return locality name
+     * @return the locality name
      */
     public String getLocalityName() {
         return localityName;
     }
 
     /**
-     * Returns the ASCII greeting.
-     * @return ASCII greeting
+     * Returns the ascii greeting. Just the greeting, no formatting.
+     * @return the ascii greeting
      */
     public String getAsciiGreeting() {
         return asciiGreeting;
     }
 
     /**
-     * Returns the Unicode greeting.
-     * @return Unicode greeting
+     * Returns the unicode greeting. Just the greeting, no formatting.
+     * @return the unicode greeting
      */
     public String getUnicodeGreeting() {
         return unicodeGreeting;
     }
 
     /**
-     * Returns the formatted greeting string.
-     * @return formatted greeting
+     * Gets the unicode format string. This string will have a %s, so that the name
+     * can be inserted into the greeting in the correct location.
+     * @return the format string with the greeting inserted into the format
      */
     public String getFormatStr() {
-        return formatStr;
+        return String.format(formatStr, unicodeGreeting);
     }
 
     /**
-     * Overloaded method that allows selecting ASCII or Unicode greeting.
-     * @param useAscii if true, use ASCII greeting format
-     * @return formatted greeting string
+     * Returns the format string with the greeting inserted into the format. This string
+     * will have a %s, so that the name can be inserted into the greeting in the correct location.
+     * @param asciiOnly if true, only ascii characters will be used
+     * @return the format string with the greeting inserted into the format
      */
-    public String getFormatStr(boolean useAscii) {
-        return useAscii ? "%s, " + asciiGreeting + "!" : formatStr;
+    public String getFormatStr(boolean asciiOnly) {
+        return String.format(formatStr, asciiOnly ? asciiGreeting : unicodeGreeting);
     }
 
     /**
-     * Returns a string representation of the object.
-     * @return formatted string
+     * Returns the full greeting details as a string. Primarily for debugging purposes.
+     * @return the string representation of the greeting
      */
     @Override
     public String toString() {
@@ -118,3 +111,4 @@ public class Greeting {
                 localityID, localityName, asciiGreeting, unicodeGreeting);
     }
 }
+

@@ -55,32 +55,40 @@ Write a short paragraph detailing the flow of the program in your own words. Thi
 1. List three additional java syntax items you didn't know when reading the code.  (make sure to use * for the list items, see example below, the backtick marks are used to write code inline with markdown)
    
    * (example) `final class`
+   * this()
+   * String.format()
+   * Scanner SCANNER = new Scanner(System.in)
+   
 
 2. For each syntax additional item listed above, explain what it does in your own words and then link a resource where you figured out what it does in the references section. 
 
     * (example) The `final` keyword when used on a class prevents the class from being subclassed. This means that the class cannot be extended by another class. This is useful when you want to prevent a class from being modified or extended[^1] . It is often the standard to do this when a class only contains static methods such as driver or utility classes. Math in Java is an example of a final class[^2] .
+    * The this() keyword is used to call another constructor within the same class. It helps reduce redundancy when initializing objects with multiple constructor variations.
+      https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html
+    * The String.format() method allows formatted string creation, similar to printf. It replaces placeholders (%s, %d, etc.) with actual values.
+    * https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-
+    * The Scanner class is used to take user input. new Scanner(System.in) creates a scanner object that reads input from the console.
+    * https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
 
 3. What does `main` do in Java? 
-
-    Go ahead and answer the question as a short paragraph / few sentences. Notice the indent, this is valid because it is a list item. (erase this line before writing.)
-
+   
+   The main method is the entry point of a Java program, where execution begins.
 
 4. What does `toString()` do in Java? Why should any object class you create have a `toString()` method?
 
-    Same as above - short answer
+   The toString() method in Java returns a string representation of the object. Overriding toString() in custom classes makes it easier to print and debug objects by providing meaningful output instead of the default memory address.
 
 5. What is javadoc style commenting? What is it used for? 
 
-    Same as above - short answer
-
+   Javadoc-style commenting uses /** ... */ to document Java classes, methods, and fields. It is used to generate HTML documentation, providing descriptions, parameter details, and return values. This helps developers maintain and use code efficiently.
 
 6. Describe Test Driving Development (TDD) in your own words. 
 
-    Same as above - short answer    
+   TDD is 6. Describe Test Driving Development (TDD) in your own words.
 
 7. Go to the [Markdown Playground](MarkdownPlayground.md) and add at least 3 different markdown elements you learned about by reading the markdown resources listed in the document. Additionally you need to add a mermaid class diagram (of your choice does not have to follow the assignment. However, if you did use mermaid for the assignment, you can just copy that there). Add the elements into the markdown file, so that the formatting changes are reserved to that file. 
 
-   
+   See markdown playground
 
 ## Deeper Thinking Questions
 
@@ -88,10 +96,12 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 
 1. Why would we want to keep interaction with the client contained to ConsoleView?
-
+   
+   Because it can make the concerns separated. It makes the console interactions isolated from business logic. So that the code is more maintainable, as it wont affect the other logic. 
 
 2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Geeting.java and how that could be used in your design.
 
+   Instead of hardcoding greetings, we could use an interface or abstract class (Greeting.java) and allow different greeting classes to implement it. A factory pattern could then instantiate the correct greeting based on user input.
 
 
 > [!IMPORTANT]

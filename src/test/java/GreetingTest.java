@@ -66,14 +66,13 @@ public class GreetingTest {
      */
      @Test
      public void testGetUnicodeGreeting() {
-     assertEquals("Hello", usa.getUnicodeGreeting());
-     assertEquals("Aloha", hawaii.getUnicodeGreeting());
-     assertEquals("你好", china.getUnicodeGreeting()); // only changes for this one, but worth
-     checking
+      assertEquals("Hello", usa.getUnicodeGreeting());
+      assertEquals("Aloha", hawaii.getUnicodeGreeting());
+      assertEquals("你好", china.getUnicodeGreeting()); // only changes for this one, but worth checking
      }
-
     /**
-     * Tests to make sure the format string is being returned properly.
+     * Tests to make sure the format string is being returned properly.ng
+     *      }
      */
      @Test
      public void testGetFormatStr() {
@@ -89,12 +88,9 @@ public class GreetingTest {
      */
      @Test
      public void testToString() {
-     assertEquals("{localityID:2, localityName:\"USA\", asciiGreeting:\"Hello\",
-     unicodeGreeting:\"Hello\"}", usa.toString());
-     assertEquals("{localityID:1, localityName:\"Hawaii\", asciiGreeting:\"Aloha\",
-     unicodeGreeting:\"Aloha\"}", hawaii.toString());
-     assertEquals("{localityID:3, localityName:\"China\", asciiGreeting:\"Ni Hao\",
-     unicodeGreeting:\"你好\"}", china.toString());
+     assertEquals("{localityID:2, localityName:\"USA\", asciiGreeting:\"Hello\", unicodeGreeting:\"Hello\"}", usa.toString());
+     assertEquals("{localityID:1, localityName:\"Hawaii\", asciiGreeting:\"Aloha\", unicodeGreeting:\"Aloha\"}", hawaii.toString());
+     assertEquals("{localityID:3, localityName:\"China\", asciiGreeting:\"Ni Hao\", unicodeGreeting:\"你好\"}", china.toString());
      }
 
     /**
